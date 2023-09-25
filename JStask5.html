@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+		<style>
+			label {
+				margin-right: 10px;
+			}
+			input[type="text"],
+			input[type="email"],
+			input[type="url"],
+			textarea {
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="myform">
+			<p>
+				<label for="name">Name:</label>
+				<input name="name"
+					type="text"
+					data-val-required="Name is required."
+					data-val="true" />
+				<span data-valmsg-for="name"
+					data-valmsg-replace="true"
+					style="color: red;" />
+			</p>
+			<p>
+				<label for="email">Email:</label>
+				<input type="email" name="email"
+					data-val-required="Email is required."
+					data-val="true" />
+				<span data-valmsg-for="email"
+					data-valmsg-replace="true"
+					style="color: red;" />
+			</p>
+			<p>
+				<label for="website">Website:</label>
+				<input name="website"
+					type="url"
+					data-val-required="Website is required."
+					data-val="true" />
+				<span data-valmsg-for="website"
+					data-valmsg-replace="true"
+					style="color: red;" />
+			</p>
+			<p>
+				<label for="message">Message:</label>
+				<textarea name="message"
+					data-val-required="Message is required."
+					data-val="true"></textarea>
+				<span data-valmsg-for="message"
+					data-valmsg-replace="true"
+					style="color: red;" />
+			</p>
+			<p>
+				<input class="submit"
+					type="submit"
+					value="Submit" />
+			</p>
+		</form>
+		<script>
+			// Your JavaScript validation logic here
+			$(document).ready(function () {
+				$("#myform").validate();
+			});
+		</script>
+	</body>
+</html>

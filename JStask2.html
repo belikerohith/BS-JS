@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Order Example</title>
+</head>
+<body>
+
+<h1>Alphabetical Order Example</h1>
+
+<p>Original string: 'webmaster'</p>
+<p>String in alphabetical order: <span id="sortedString"></span></p>
+
+<script>
+function sortStringAlphabetically(inputString) {
+  let charArray = inputString.split('');
+  charArray.sort();
+  let sortedString = charArray.join('');
+
+  return sortedString;
+}
+let inputString = 'webmaster';
+let sortedResult = sortStringAlphabetically(inputString);
+document.getElementById("sortedString").textContent = sortedResult;
+</script>
+</body>
+</html>
